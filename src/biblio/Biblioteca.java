@@ -1,12 +1,22 @@
 package biblio;
 
 public class Biblioteca {
+	
+	final static int MAX_FLOORS = 3;
+	
+	Piano piani[];
+
   /**
    * Costruisce un oggetto bibioteca con 3 piani, 
    * 30 scaffali per piano, 6 ripiani per scaffale
-   * ciascuno con posto per 10 libri
+   * ciascuno con posto per 10 libri.
    */
   public Biblioteca() {
+	  piani = new Piano[MAX_FLOORS];
+  }
+  
+  public Biblioteca(int floors, int bookcase, int shelves, int books) {
+	  piani = new Piano[floors];
   }
   
   /**

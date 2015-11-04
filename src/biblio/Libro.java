@@ -1,33 +1,38 @@
 package biblio;
 
 public class Libro {
+	
+	private String autor;
+	private String title;
+	
 	/**
 	 * Costruisce un libro a partire da autore e titolo
 	 */
 	public Libro(String autore, String titolo) {
+		this.autor = autore;
+		this.title = titolo;
 	}
 
+	/**
+	 * Restitiuisce la string corrispondente al libro nella forma "autore, titolo"
+	 */
+	public String toString() {
+		return autor+", "+title;
+	}
 
+/* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
 	/**
 	 * Metodo <i>getter</i> per accedere all'autore del libro
 	 */
 	public String getAutore() {
-		return "";
+		return autor;
 	}
 
 	/**
 	 * Metodo <i>getter</i> per accedere al titolo del libro
 	 */
 	public String getTitolo() {
-		return "";
-	}
-	
-	/**
-	 * Restitiuisce la string corrispondente al libro
-	 * nella forma "autore, titolo"
-	 */
-	public String toString() {
-		return "";
+		return title;
 	}
 	
 	/**
