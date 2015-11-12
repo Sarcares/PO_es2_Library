@@ -4,7 +4,9 @@ public class Libro {
 	
 	private String autor;
 	private String title;
-	
+	private int floor;
+	private String bookcase;
+	private int shelf;
 	/**
 	 * Costruisce un libro a partire da autore e titolo
 	 */
@@ -39,20 +41,41 @@ public class Libro {
 	 * Restituisce il numero del ripiano in cui si trova il libro
 	 */
 	public int getRipiano() {
-		return 0;
+		return this.shelf;
 	}
 
 	/**
 	 * Restituisce il codice dello scaffale in cui si trova il libro
 	 */
 	public String getScaffale() {
-		return "";
+		return this.bookcase;
 	}
 
 	/**
 	 * Restituisce il numero del piano in cui si trova il libro
 	 */
 	public int getPiano() {
-		return 0;
+		return this.floor;
+	}
+
+	/**
+	 * Imposta il numero del piano in cui si trova il libro
+	 */
+	public void setPiano(int floor) {
+		this.floor = floor;
+	}
+	
+	/**
+	 * Imposta il numero del ripiano in cui si trova il libro
+	 */
+	public void setRipiano(String bookcase) {
+		this.bookcase = bookcase;
+	}
+
+	/**
+	 * Imposta il codice dello scaffale in cui si trova il libro
+	 */
+	public void setScaffale(int shelf) {
+		this.shelf = shelf;
 	}
 }

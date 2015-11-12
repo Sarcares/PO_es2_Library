@@ -2,21 +2,32 @@ package biblio;
 
 public class Biblioteca {
 	
-	final static int MAX_FLOORS = 3;
+	final static int DEFAULT_FLOORS = 3;
 	
 	Piano piani[];
 
   /**
-   * Costruisce un oggetto bibioteca con 3 piani, 
+   * Costruisce un oggetto Biblioteca con 3 piani, 
    * 30 scaffali per piano, 6 ripiani per scaffale
    * ciascuno con posto per 10 libri.
    */
   public Biblioteca() {
-	  piani = new Piano[MAX_FLOORS];
+	  this(DEFAULT_FLOORS, Piano.DEFAULT_BOOKCASES, Scaffale.DEFAULT_SHELVES, Ripiano.DEFAULT_BOOKS);
   }
   
-  public Biblioteca(int floors, int bookcase, int shelves, int books) {
-	  piani = new Piano[floors];
+  /**
+   * Costruisce un oggetto Biblioteca permettendo di specificarne i parametri.
+   * @param floors - Numero di Piani della biblioteca
+   * @param bookcase - Numero di scaffali per piano
+   * @param shelves - Numero di ripiani per ogni scaffale
+   * @param books - Numero di libri su ogni ripiano
+   */
+  public Biblioteca(int floors, int bookcases, int shelves, int books) {
+	  this.piani = new Piano[floors];
+	  
+	  for(int i=0; i<floors; i++) {
+		  this.piani[i] = new Piano(bookcases, shelves, books);
+	  }
   }
   
   /**

@@ -2,14 +2,22 @@ package biblio;
 
 public class Ripiano {
 	
-	final static int MAX_BOOKS = 10;
+	final static int DEFAULT_BOOKS = 10;
 	
 	Libro libri[];
 	
 	/**
-	* Costruisce un oggetto ripiano in grado di contenere 10 libri.
+	* Costruisce un oggetto Ripiano in grado di contenere 10 libri.
 	*/
 	public Ripiano(){
-		libri = new Libro[MAX_BOOKS];
+		this(DEFAULT_BOOKS);
+	}
+
+	  /**
+	   * Costruisce un oggetto Ripiano permettendo di specificarne i parametri.
+	   * @param books - Numero di libri su ogni ripiano
+	   */
+	public Ripiano(int books) {
+		libri = new Libro[books];
 	}
 }
