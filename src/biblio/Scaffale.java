@@ -57,4 +57,22 @@ public class Scaffale {
 		bookcase = bookcase.substring(2);
 		return Integer.valueOf(bookcase);
 	}
+
+	/**
+	 * Restituisce l'elenco dei libri contenuti nello scaffale.
+	 * Per ogni ripiano nella stringa compare l'indicazione del 
+	 * ripiano nella forma "Ripiano 1" seguito, nelle righe 
+	 * successive dai libri contenuti nel ripiano.
+	 */
+	public String getLibri() {
+		String toRet="";
+		int i;
+		
+		for(i=0; i<ripiani.length; i++) {
+			if(ripiani[i] != null)
+				toRet += "Ripiano "+i+" "+ripiani[i].getLibri()+"\n";
+		}
+		
+		return toRet;
+	}
 }

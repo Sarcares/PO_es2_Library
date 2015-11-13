@@ -50,8 +50,22 @@ public class Ripiano {
 	}
 	
 	/**
+	 * Restituisce l'elenco dei libri contenuti nel ripiano, uno per riga.
+	 */
+	public String getLibri() {
+		String toRet = "\n";
+		
+		if(libri.isEmpty()) 
+			return "empty.";
+		
+		for(Libro l : libri) {
+			toRet += "\t"+l.toString()+"\n";
+		}
+		return toRet;
+	}
+
+	/**
 	 * This method returns the number of books stored inside the shelf.
-	 * @return
 	 */
 	public int getBooksNumber() {
 		return libri.size();

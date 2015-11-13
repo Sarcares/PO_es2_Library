@@ -55,4 +55,18 @@ public class Piano {
 		return this.scaffali[bookcase].contiene(ripiano, libro);
 	}
 
+	/**
+	 * Restituisce l'elenco dei libri contenuti nello scaffale specificato.
+	 * Per ogni ripiano nella stringa compare l'indicazione del 
+	 * ripiano nella forma "Ripiano 1" seguito, nelle righe 
+	 * successive dai libri contenuti nel ripiano.
+	 */
+	public String getLibri(String scaffale) {
+		int bookcase = Scaffale.toInteger(scaffale);
+		if( (bookcase < 0) || (bookcase >= scaffali.length) )
+			return "Invalid bookcase!\n";
+		
+		return scaffali[Scaffale.toInteger(scaffale)].getLibri();
+	}
+
 }

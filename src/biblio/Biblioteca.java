@@ -54,13 +54,16 @@ public class Biblioteca {
   }
 
   /**
-   * Restituisce l'elenco dei libri contenuti in uno scaffale
+   * Restituisce l'elenco dei libri contenuti in uno scaffale.
    * Per ogni ripiano nella stringa compare l'indicazione del 
    * ripiano nella forma "Ripiano 1" seguito, nelle righe 
    * successive dai libri contenuti nel ripiano.
    */
   public String getLibri(int piano, String scaffale) {
-    return "";
+	  if( (piano < 0) || (piano >= piani.length) )
+		  return "Invalid Floor!\n";
+	  
+	  return piani[piano].getLibri(scaffale);
   }
 
   /**
