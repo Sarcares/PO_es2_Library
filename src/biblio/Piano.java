@@ -38,7 +38,12 @@ public class Piano {
 		if((bookcase < 0) || (bookcase >= scaffali.length))
 			return false;
 		
-		return scaffali[bookcase].add(libro, ripiano);
+		if( scaffali[bookcase].add(libro, ripiano) == true ) {
+			libro.setScaffale(scaffale);
+			return true;
+		}
+		else
+			return false;
 	}
 
 	/**

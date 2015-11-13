@@ -45,7 +45,12 @@ public class Scaffale {
 		if((ripiano < 0) || (ripiano>=ripiani.length))
 			return false;
 		
-		return ripiani[ripiano].add(libro);
+		if( ripiani[ripiano].add(libro) == true ) {
+			libro.setRipiano(ripiano);
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	/**

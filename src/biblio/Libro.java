@@ -91,14 +91,14 @@ public class Libro implements Comparable<Libro>{
 	/**
 	 * Imposta il numero del ripiano in cui si trova il libro
 	 */
-	public void setRipiano(String bookcase) {
-		this.bookcase = bookcase;
+	public void setRipiano(int shelf) {
+		this.shelf = shelf;
 	}
 
 	/**
 	 * Imposta il codice dello scaffale in cui si trova il libro
 	 */
-	public void setScaffale(int shelf) {
-		this.shelf = shelf;
+	public void setScaffale(String bookcase) {
+		this.bookcase = bookcase;
 	}
 }

@@ -38,7 +38,12 @@ public class Biblioteca {
 	  if((piano < 0) || (piano >= piani.length))
 		  return false;
 	  
-	  return piani[piano].add(libro, scaffale, ripiano);
+	  if( piani[piano].add(libro, scaffale, ripiano) == true ) {
+		  libro.setPiano(piano);
+		  return true;
+	  }
+	  else
+		  return false;
   }
 
   /**
