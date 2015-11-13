@@ -26,4 +26,35 @@ public class Scaffale {
 			this.ripiani[i] = new Ripiano(books);
 		}
 	}
+
+	/**
+	 * Verifica se il libro specificato si trova al ripiano dato.
+	 * @return <code>true</code> se il libro è presente
+	 */
+	public boolean contiene(int ripiano, Libro libro) {
+		if( (ripiano < 0) || (ripiano >= ripiani.length) )
+			return false;
+		return this.ripiani[ripiano].contiene(libro);
+	}
+
+	/**
+	 * Aggiunge il libro specificato nel ripano specificato.
+	 * @return <code>true</code> se l'inserimento è andato a buon fine
+	 */
+	public boolean add(Libro libro, int ripiano) {
+		if((ripiano < 0) || (ripiano>=ripiani.length))
+			return false;
+		
+		return ripiani[ripiano].add(libro);
+	}
+	
+	/**
+	 * This method transform the code of a bookcase in the relative integer value.
+	 * @param bookcase - The code of the bookcase
+	 * @return - The integer value related to that code
+	 */
+	public static int toInteger(String bookcase) {
+		bookcase = bookcase.substring(2);
+		return Integer.valueOf(bookcase);
+	}
 }

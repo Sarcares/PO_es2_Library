@@ -1,18 +1,41 @@
 package biblio;
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
 	
 	private String autor;
 	private String title;
 	private int floor;
 	private String bookcase;
 	private int shelf;
+	
 	/**
 	 * Costruisce un libro a partire da autore e titolo
 	 */
 	public Libro(String autore, String titolo) {
 		this.autor = autore;
 		this.title = titolo;
+	}
+	
+	public boolean equals(Object otherBook) {
+		Libro other = (Libro) otherBook;
+		
+		if( ! title.equals(other.getTitolo()) )
+			return false;
+		if( ! autor.equals(other.getAutore()) )
+			return false;
+		
+		return true;
+	}
+
+	@Override
+	public int compareTo(Libro o) {
+		int toRet;
+		
+		toRet = title.compareTo(o.getTitolo());
+		if(toRet == 0)
+			toRet = autor.compareTo(o.getAutore());
+		
+		return toRet;
 	}
 
 	/**

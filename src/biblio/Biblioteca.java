@@ -31,12 +31,14 @@ public class Biblioteca {
   }
   
   /**
-   * Aggiunge il libro specificato nel ripano, scaffale
-   * e piano specificati.
+   * Aggiunge il libro specificato nel ripano, scaffale e piano specificati.
    * @return <code>true</code> se l'inserimento è andato a buon fine
    */
   public boolean add(Libro libro, int piano, String scaffale, int ripiano) {
-    return false;
+	  if((piano < 0) || (piano >= piani.length))
+		  return false;
+	  
+	  return piani[piano].add(libro, scaffale, ripiano);
   }
 
   /**
@@ -45,8 +47,10 @@ public class Biblioteca {
    * @return <code>true</code> se il libro è presente
    */
   public boolean contiene(int piano, String scaffale, int ripiano, Libro libro) {
-
-    return false;
+	  if( (piano < 0) || (piano >= piani.length) )
+		  return false;
+	  
+	  return this.piani[piano].contiene(scaffale, ripiano, libro);
   }
 
   /**
