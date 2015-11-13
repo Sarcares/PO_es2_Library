@@ -50,6 +50,38 @@ public class Ripiano {
 	}
 	
 	/**
+	 * Ricerca un libro inserito nella biblioteca in base a autore e titolo. 
+	 * Se uno dei due è <code>null</code> la ricerca viene fatta solo su un parametro.
+	 * @return il libro ricercato o <code>null</code> se non è stato trovato alcun libro
+	 */
+	public Libro cerca(String autore, String titolo) {
+		if((autore == null) && (titolo == null) )
+			return null;
+		  
+		Libro toRet = null;
+
+		for(Libro l : libri) {
+			if(autore == null) {
+				if(titolo.equals(l.getTitolo()))
+					toRet = l;
+			}
+			else if(titolo == null) {
+				if(autore.equals(l.getAutore()))
+					toRet = l;
+			}
+			else {
+				if( (titolo.equals(l.getTitolo())) && (autore.equals(l.getAutore())) )
+					toRet = l;
+			}
+			
+			if(toRet != null)
+				break;
+		}
+		
+		return toRet;
+	}
+
+	/**
 	 * Restituisce l'elenco dei libri contenuti nel ripiano, uno per riga.
 	 */
 	public String getLibri() {

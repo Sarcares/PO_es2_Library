@@ -3,7 +3,6 @@ package biblio;
 public class Scaffale {
 
 	final static int DEFAULT_SHELVES = 6;
-	
 	Ripiano ripiani[];
 	
 	/**
@@ -61,6 +60,24 @@ public class Scaffale {
 	public static int toInteger(String bookcase) {
 		bookcase = bookcase.substring(2);
 		return Integer.valueOf(bookcase);
+	}
+
+	/**
+	 * Ricerca un libro inserito nella biblioteca in base a autore e titolo. 
+	 * Se uno dei due è <code>null</code> la ricerca viene fatta solo su un parametro.
+	 * @return il libro ricercato o <code>null</code> se non è stato trovato alcun libro
+	 */
+	public Libro cerca(String autore, String titolo) {
+		Libro toRet = null;
+		  
+		for(int i=0; i<ripiani.length; i++) {
+			toRet = ripiani[i].cerca(autore, titolo);
+			  
+			if(toRet != null)
+				return toRet;
+		}
+		  
+		return toRet;
 	}
 
 	/**

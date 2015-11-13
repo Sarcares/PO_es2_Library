@@ -3,7 +3,6 @@ package biblio;
 public class Biblioteca {
 	
 	final static int DEFAULT_FLOORS = 3;
-	
 	Piano piani[];
 
   /**
@@ -72,13 +71,20 @@ public class Biblioteca {
   }
 
   /**
-   * Ricerca un libro inserito nella biblioteca in base
-   * a autore e titolo. Se uno dei due è <code>null</code>
-   * la ricerca viene fatta solo su un parametro.
-   * @return il libro ricercata o <code>null</code> se
-   * 		non è stato trovato alcun libro
+   * Ricerca un libro inserito nella biblioteca in base a autore e titolo. 
+   * Se uno dei due è <code>null</code> la ricerca viene fatta solo su un parametro.
+   * @return il libro ricercato o <code>null</code> se non è stato trovato alcun libro
    */
   public Libro cerca(String autore, String titolo) {
-    return null;
+	  Libro toRet = null;
+	  
+	  for(int i=0; i<piani.length; i++) {
+		  toRet = piani[i].cerca(autore, titolo);
+		  
+		  if(toRet != null)
+			  return toRet;
+	  }
+	  
+	  return toRet;
   }
 }

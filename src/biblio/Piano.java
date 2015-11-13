@@ -3,7 +3,6 @@ package biblio;
 public class Piano {
 	
 	final static int DEFAULT_BOOKCASES = 30;
-	
 	Scaffale scaffali[];
 	
 	/**
@@ -54,10 +53,27 @@ public class Piano {
 		int bookcase = Scaffale.toInteger(scaffale);
 		if( (bookcase < 0) || (bookcase >= scaffali.length) )
 			return false;
-		//else
-		//	System.out.println("LOG - Il codice dello scaffale è: "+bookcase+"\n");
+		//else System.out.println("LOG - Il codice dello scaffale è: "+bookcase+"\n");
 		
 		return this.scaffali[bookcase].contiene(ripiano, libro);
+	}
+
+	/**
+	 * Ricerca un libro inserito nella biblioteca in base a autore e titolo. 
+	 * Se uno dei due è <code>null</code> la ricerca viene fatta solo su un parametro.
+	 * @return il libro ricercato o <code>null</code> se non è stato trovato alcun libro
+	 */
+	public Libro cerca(String autore, String titolo) {
+		Libro toRet = null;
+		  
+		for(int i=0; i<scaffali.length; i++) {
+			toRet = scaffali[i].cerca(autore, titolo);
+			  
+			if(toRet != null)
+				return toRet;
+		}
+		  
+		return toRet;
 	}
 
 	/**
