@@ -2,7 +2,7 @@ package biblio;
 
 public class Libro implements Comparable<Libro>{
 	
-	private String autor;
+	private String author;
 	private String title;
 	private int floor;
 	private String bookcase;
@@ -12,7 +12,7 @@ public class Libro implements Comparable<Libro>{
 	 * Costruisce un libro a partire da autore e titolo.
 	 */
 	public Libro(String autore, String titolo) {
-		this.autor = autore;
+		this.author = autore;
 		this.title = titolo;
 	}
 	
@@ -21,7 +21,7 @@ public class Libro implements Comparable<Libro>{
 		
 		if( ! title.equals(other.getTitolo()) )
 			return false;
-		if( ! autor.equals(other.getAutore()) )
+		if( ! author.equals(other.getAutore()) )
 			return false;
 		
 		return true;
@@ -33,7 +33,7 @@ public class Libro implements Comparable<Libro>{
 		
 		toRet = title.compareTo(o.getTitolo());
 		if(toRet == 0)
-			toRet = autor.compareTo(o.getAutore());
+			toRet = author.compareTo(o.getAutore());
 		
 		return toRet;
 	}
@@ -42,7 +42,7 @@ public class Libro implements Comparable<Libro>{
 	 * Restitiuisce la string corrispondente al libro nella forma "autore, titolo".
 	 */
 	public String toString() {
-		return autor+", "+title;
+		return author+", "+title;
 	}
 
 /* -.-.-.-.-.- Getter and Setter Methods -.-.-.-.-.- */
@@ -50,7 +50,7 @@ public class Libro implements Comparable<Libro>{
 	 * Metodo <i>getter</i> per accedere all'autore del libro.
 	 */
 	public String getAutore() {
-		return autor;
+		return author;
 	}
 
 	/**
