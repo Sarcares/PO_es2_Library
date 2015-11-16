@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
+import javax.swing.JOptionPane;
+
 /**
  * This class allows to manage a Library.<BR>
  * For using this class is recommended to check the constants ADD, LIST, LIBRO, QUIT.
@@ -35,6 +37,7 @@ public class GestioneBiblio {
 		String author, title, bookcase;
 		int floor, shelf;
 		//StringTokenizer st;
+		//String user = JOptionPane.showInputDialog("Please enter your name: ");
 		
 		BufferedReader stdin;
 		InputStreamReader keyboard;
@@ -48,7 +51,8 @@ public class GestioneBiblio {
 				
 		do {
 			System.out.println("Enter a command");
-			System.out.print("> ");
+			System.out.println("> ");
+			//System.out.print(user+"@library$ > ");
 			cmd = stdin.readLine();
 			switch (cmd) {
 				case ADD:	//inserimento libro
