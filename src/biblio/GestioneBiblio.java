@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-import javax.swing.JOptionPane;
-
 /**
  * This class allows to manage a Library.<BR>
  * For using this class is recommended to check the constants ADD, LIST, LIBRO, QUIT.
